@@ -33,7 +33,16 @@ function App() {
         <button onClick={() => setCount(0)}>reset</button>
       </div>
       <div className="box">
-        <button onClick={fetchDadJoke}>Fetch a Dad Joke</button>
+        <div className="buttons">
+          <button onClick={fetchDadJoke}>Fetch a Dad Joke</button>
+          <button
+            onClick={() => {
+              setDadJoke("");
+            }}
+          >
+            Clear
+          </button>
+        </div>
         <p className="dadjoke">{dadJoke || ""}</p>
       </div>
     </>
