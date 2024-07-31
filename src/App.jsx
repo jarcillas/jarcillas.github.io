@@ -49,6 +49,7 @@ function App() {
               setShowDadJoke(true);
               fetchData();
             }}
+            disabled={isLoading}
           >
             {isLoading ? "Loading..." : "Fetch a Dad Joke "}
           </button>
