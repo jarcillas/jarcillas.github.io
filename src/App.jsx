@@ -1,25 +1,35 @@
 import { useState } from "react";
+import { useFetch } from "./hooks/useFetch";
 import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [dadJoke, setDadJoke] = useState();
+  const [showDadJoke, setShowDadJoke] = useState(true);
 
-  const fetchDadJoke = async () => {
-    try {
-      // Fetch a dad joke
-      const response = await fetch("https://icanhazdadjoke.com/", {
-        headers: {
-          Accept: "application/json",
-        },
-      });
-      const result = await response.json();
-      setDadJoke(result.joke);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-      setDadJoke("Error fetching joke.");
+  const { data, isLoading, fetchData } = useFetch(
+    "https://icanhazdadjoke.com/",
+    {
+      headers: {
+        Accept: "application/json",
+      },
     }
-  };
+  );
+
+  // const fetchDadJoke = async () => {
+  //   try {
+  //     // Fetch a dad joke
+  //     const response = await fetch("https://icanhazdadjoke.com/", {
+  //       headers: {
+  //         Accept: "application/json",
+  //       },
+  //     });
+  //     const result = await response.json();
+  //     setDadJoke(result.joke);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //     setDadJoke("Error fetching joke.");
+  //   }
+  // };
 
   return (
     <>
@@ -34,16 +44,23 @@ function App() {
       </div>
       <div className="box">
         <div className="buttons">
-          <button onClick={fetchDadJoke}>Fetch a Dad Joke</button>
           <button
             onClick={() => {
-              setDadJoke("");
+              setShowDadJoke(true);
+              fetchData();
+            }}
+          >
+            {isLoading ? "Loading..." : "Fetch a Dad Joke "}
+          </button>
+          <button
+            onClick={() => {
+              setShowDadJoke(false);
             }}
           >
             Clear
           </button>
         </div>
-        <p className="dadjoke">{dadJoke || ""}</p>
+        <p className="dadjoke">{showDadJoke ? data?.joke : ""}</p>
       </div>
     </>
   );
