@@ -20,8 +20,10 @@ function App() {
         <a href="/">jarcillas.github.io</a>
       </h1>
 
-      <div className="box">
-        <p className="font-serif">{showDadJoke ? data?.joke : ""}</p>
+      <div className="w-full">
+        <p className="font-script text-2xl text-slate-800">
+          {showDadJoke ? data?.joke : ""}
+        </p>
         <div className="buttons">
           <button
             onClick={() => {
