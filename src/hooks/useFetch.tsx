@@ -1,9 +1,15 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 
-export const useFetch = (url, options) => {
-  const [data, setData] = useState(null);
+interface DadJokeJSON {
+  id: string;
+  joke: string;
+  status: number;
+}
+
+export const useFetch = (url: string, options: RequestInit) => {
+  const [data, setData] = useState<null | DadJokeJSON>(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<null | Error>(null);
 
   const fetchData = async () => {
     setIsLoading(true);
@@ -13,7 +19,7 @@ export const useFetch = (url, options) => {
       const response = await fetch(url, options);
       const result = await response.json();
       setData(result);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error fetching data:", error);
       setError(error);
     }
