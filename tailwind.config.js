@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         title: ["Outfit"],
+        script: ["Style Script"],
       },
     },
   },
