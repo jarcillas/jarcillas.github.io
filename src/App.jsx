@@ -15,22 +15,6 @@ function App() {
     }
   );
 
-  // const fetchDadJoke = async () => {
-  //   try {
-  //     // Fetch a dad joke
-  //     const response = await fetch("https://icanhazdadjoke.com/", {
-  //       headers: {
-  //         Accept: "application/json",
-  //       },
-  //     });
-  //     const result = await response.json();
-  //     setDadJoke(result.joke);
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //     setDadJoke("Error fetching joke.");
-  //   }
-  // };
-
   return (
     <>
       <h1 className="header">
