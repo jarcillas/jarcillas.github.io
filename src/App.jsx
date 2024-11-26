@@ -3,7 +3,6 @@ import { useFetch } from "./hooks/useFetch";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
   const [showDadJoke, setShowDadJoke] = useState(true);
 
   const { data, isLoading, fetchData } = useFetch(
@@ -15,34 +14,14 @@ function App() {
     }
   );
 
-  // const fetchDadJoke = async () => {
-  //   try {
-  //     // Fetch a dad joke
-  //     const response = await fetch("https://icanhazdadjoke.com/", {
-  //       headers: {
-  //         Accept: "application/json",
-  //       },
-  //     });
-  //     const result = await response.json();
-  //     setDadJoke(result.joke);
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //     setDadJoke("Error fetching joke.");
-  //   }
-  // };
-
   return (
     <>
-      <h1 className="header">
+      <h1 className="w-full flex justify-center p-2 font-title text-4xl font-extralight">
         <a href="/">jarcillas.github.io</a>
       </h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <button onClick={() => setCount(0)}>reset</button>
-      </div>
+
       <div className="box">
+        <p className="font-serif">{showDadJoke ? data?.joke : ""}</p>
         <div className="buttons">
           <button
             onClick={() => {
@@ -61,7 +40,6 @@ function App() {
             Clear
           </button>
         </div>
-        <p className="dadjoke">{showDadJoke ? data?.joke : ""}</p>
       </div>
     </>
   );
