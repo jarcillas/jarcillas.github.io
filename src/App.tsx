@@ -24,7 +24,9 @@ function App() {
       </h1>
 
       <div className="w-full mt-14 flex flex-col items-center">
-        <DadJoke />
+        <div className="w-[600px] py-4">
+          <DadJoke className="gap-y-6" />
+        </div>
       </div>
     </div>
   );

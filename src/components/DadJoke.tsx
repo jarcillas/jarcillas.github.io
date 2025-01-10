@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 
-const DadJoke = () => {
+const DadJoke = ({ className }: { className?: string }) => {
   const [showDadJoke, setShowDadJoke] = useState(true);
 
   const { data, isLoading, fetchData } = useFetch(
@@ -10,11 +10,17 @@ const DadJoke = () => {
       headers: {
         Accept: "application/json",
       },
-    }
+    },
   );
+
+  const baseClasses =
+    "w-full flex flex-col justify-center items-center container";
+  const combinedClasses = `${baseClasses} ${className}`.trim();
+
+  console.log("Mounting DadJoke component...");
   return (
-    <div className="w-full flex flex-col justify-center items-center gap-y-4 container">
-      <div className="font-title text-3xl text-slate-900 font-extralight flex items-center h-[120px] p-2 w-fit rounded-lg tracking-tight text-center text-balance">
+    <div className={combinedClasses}>
+      <div className="font-title text-3xl text-slate-900 font-extralight flex items-center h-full w-fit rounded-lg tracking-tight text-center text-balance">
         {showDadJoke ? data?.joke : "No dad joke yet."}
       </div>
       <div className="flex items-center gap-4">
