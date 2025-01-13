@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { useFetch } from "../hooks/useFetch";
 
-const DadJoke = ({ className }: { className?: string }) => {
+const DadJoke = ({
+  className,
+  jokeClasses,
+}: {
+  className?: string;
+  jokeClasses?: string;
+}) => {
   const [showDadJoke, setShowDadJoke] = useState(true);
 
   const { data, isLoading, fetchData } = useFetch(
@@ -17,10 +23,14 @@ const DadJoke = ({ className }: { className?: string }) => {
     "w-full flex flex-col justify-center items-center container";
   const combinedClasses = `${baseClasses} ${className}`.trim();
 
+  const baseJokeClasses =
+    "font-title text-3xl text-slate-900 font-extralight flex items-center h-full w-fit rounded-lg tracking-tight text-center text-balance";
+  const combinedJokeClasses = `${baseJokeClasses} ${jokeClasses}`.trim();
+
   console.log("Mounting DadJoke component...");
   return (
     <div className={combinedClasses}>
-      <div className="font-title text-3xl text-slate-900 font-extralight flex items-center h-full w-fit rounded-lg tracking-tight text-center text-balance">
+      <div className={combinedJokeClasses}>
         {showDadJoke ? data?.joke : "No dad joke yet."}
       </div>
       <div className="flex items-center gap-4">
