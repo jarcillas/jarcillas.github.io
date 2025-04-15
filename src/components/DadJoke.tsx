@@ -16,7 +16,7 @@ const DadJoke = ({
       headers: {
         Accept: "application/json",
       },
-    },
+    }
   );
 
   const baseClasses =
@@ -24,7 +24,7 @@ const DadJoke = ({
   const combinedClasses = `${baseClasses} ${className}`.trim();
 
   const baseJokeClasses =
-    "font-title text-3xl text-slate-900 font-extralight flex items-center h-full w-fit rounded-lg tracking-tight text-center text-balance";
+    "font-title text-3xl text-slate-900 font-extralight flex items-center h-full w-fit rounded-lg tracking-tight text-center text-balance text-primary";
   const combinedJokeClasses = `${baseJokeClasses} ${jokeClasses}`.trim();
 
   console.log("Mounting DadJoke component...");
@@ -35,7 +35,7 @@ const DadJoke = ({
       </div>
       <div className="flex items-center gap-4">
         <button
-          className="py-2 px-4 w-[200px] bg-slate-900 text-slate-300 rounded-lg hover:bg-slate-700 text-lg font-title"
+          className="py-2 px-4 w-[200px] bg-slate-900 text-primary rounded-lg hover:bg-slate-700 text-lg font-title"
           onClick={() => {
             setShowDadJoke(true);
             fetchData();
@@ -45,7 +45,7 @@ const DadJoke = ({
           {isLoading ? "Loading..." : "Fetch a Dad Joke "}
         </button>
         <button
-          className="py-2 px-4 w-[200px] bg-slate-900 text-slate-300 rounded-lg hover:bg-slate-700 text-lg font-title"
+          className="py-2 px-4 w-[200px] bg-slate-900 text-primary rounded-lg hover:bg-slate-700 text-lg font-title"
           onClick={() => {
             setShowDadJoke(false);
           }}

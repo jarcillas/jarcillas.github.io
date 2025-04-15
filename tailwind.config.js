@@ -33,6 +33,15 @@ export default {
       animation: {
         tada: "tada 1.2s infinite",
       },
+      colors: {
+        primary: "#88CFE1",
+        secondary: "#F7F7F7",
+        accent: "#FF6A00",
+        dark: "#000000",
+        light: "#FFFFFF",
+        "dark-gradient-1": "#12162A",
+        "dark-gradient-2": "#0A0B12",
+      },
     },
   },
   plugins: [],

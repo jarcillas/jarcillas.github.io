@@ -12,8 +12,8 @@ const projectList = [
 
 function App() {
   return (
-    <div className="overflow-hidden">
-      <h1 className="w-full flex fixed justify-between items-center mt-0 px-4 pt-2 pb-3 font-title text-2xl font-normal border-b-slate-400 border-[1px] bg-white">
+    <div className="overflow-hidden bg-dark-gradient-1 h-screen">
+      <h1 className="w-full flex fixed justify-between items-center mt-0 px-4 pt-2 pb-3 font-title text-2xl font-normal text-primary">
         <div>
           <a className="hover:animate-tada" href="/">
             jarcillas.github.io
