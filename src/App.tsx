@@ -1,49 +1,30 @@
-import { useState } from "react";
-import { useFetch } from "./hooks/useFetch";
+// import { DadJoke } from "./components/DadJoke";
 import "./App.css";
+import { ProjectList } from "./components/ProjectList";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+
+const projectList = [
+  {
+    title: "Project 1",
+    url: "https://www.google.com",
+  },
+  { title: "Project 2" },
+];
 
 function App() {
-  const [showDadJoke, setShowDadJoke] = useState(true);
-
-  const { data, isLoading, fetchData } = useFetch(
-    "https://icanhazdadjoke.com/",
-    {
-      headers: {
-        Accept: "application/json",
-      },
-    }
-  );
-
   return (
-    <>
-      <h1 className="w-full flex justify-center p-2 font-title text-4xl font-extralight">
-        <a href="/">jarcillas.github.io</a>
-      </h1>
+    <div className="overflow-hidden bg-dark-gradient-1 h-screen flex flex-col items-center">
+      <Navbar />
 
-      <div className="w-full">
-        <p className="font-script text-2xl text-slate-800">
-          {showDadJoke ? data?.joke : ""}
-        </p>
-        <div className="buttons">
-          <button
-            onClick={() => {
-              setShowDadJoke(true);
-              fetchData();
-            }}
-            disabled={isLoading}
-          >
-            {isLoading ? "Loading..." : "Fetch a Dad Joke "}
-          </button>
-          <button
-            onClick={() => {
-              setShowDadJoke(false);
-            }}
-          >
-            Clear
-          </button>
-        </div>
+      <div className="container mt-14">
+        <Hero />
+        {/* <div className="w-[600px] py-4">
+          <DadJoke className="gap-y-6" />
+        </div> */}
+        <ProjectList list={projectList} />
       </div>
-    </>
+    </div>
   );
 }
 
