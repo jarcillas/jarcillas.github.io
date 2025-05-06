@@ -1,8 +1,9 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --font-title: Open Sans;
   --font-script: Style Script;
+  --font-mono: JetBrains Mono;
 
   --animate-tada: tada 1.2s infinite;
 
