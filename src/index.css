@@ -1,3 +1,58 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --font-title: Open Sans;
+  --font-script: Style Script;
+
+  --animate-tada: tada 1.2s infinite;
+
+  --color-primary: #88cfe1;
+  --color-secondary: #f7f7f7;
+  --color-accent: #ff6a00;
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-dark-gradient-1: #12162a;
+  --color-dark-gradient-2: #0a0b12;
+
+  @keyframes tada {
+    0% {
+      transform: scale3d(1, 1, 1);
+    }
+    10%,
+    20% {
+      transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+    40%,
+    60%,
+    80% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+    100% {
+      transform: scale3d(1, 1, 1);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
