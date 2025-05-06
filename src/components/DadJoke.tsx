@@ -24,7 +24,7 @@ const DadJoke = ({
   const combinedClasses = `${baseClasses} ${className}`.trim();
 
   const baseJokeClasses =
-    "font-title text-3xl text-slate-900 font-extralight flex items-center h-full w-fit rounded-lg tracking-tight text-center text-balance text-primary";
+    "font-title text-3xl font-extralight flex items-center h-full w-fit rounded-lg tracking-tight text-center text-balance text-primary";
   const combinedJokeClasses = `${baseJokeClasses} ${jokeClasses}`.trim();
 
   console.log("Mounting DadJoke component...");
