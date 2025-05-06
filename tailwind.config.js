@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        title: ["Outfit"],
+        title: ["Open Sans"],
         script: ["Style Script"],
       },
       keyframes: {
