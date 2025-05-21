@@ -14,11 +14,23 @@ const projectList = [
     title: "Project 2",
     screenshot: "https://placehold.co/400x200?text=Project+2",
   },
+  {
+    title: "Project 3",
+    screenshot: "https://placehold.co/400x200?text=Project+3",
+  },
+  {
+    title: "Project 2",
+    screenshot: "https://placehold.co/400x200?text=Project+4",
+  },
+  {
+    title: "Project 2",
+    screenshot: "https://placehold.co/400x200?text=Project+5",
+  },
 ];
 
 function App() {
   return (
-    <div className="overflow-hidden bg-dark-gradient-1 h-screen flex flex-col items-center">
+    <div className="overflow-hidden bg-dark-gradient-1 h-screen flex flex-col items-center pb-2">
       <Navbar />
 
       <div className="sm:min-w-120 md:min-w-160 lg:min-w-240 mt-14 flex flex-col flex-grow ">
