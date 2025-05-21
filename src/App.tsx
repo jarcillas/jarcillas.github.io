@@ -6,8 +6,8 @@ import { Hero } from "./components/Hero";
 
 const projectList = [
   {
-    title: "Project 1",
-    url: "https://www.google.com",
+    title: "ShopEasy",
+    url: "https://shopeasy-web.pages.dev/",
     screenshot: "https://placehold.co/400x200?text=Project+1",
   },
   {
