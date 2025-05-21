@@ -19,11 +19,11 @@ const projectList = [
     screenshot: "https://placehold.co/400x200?text=Project+3",
   },
   {
-    title: "Project 2",
+    title: "Project 4",
     screenshot: "https://placehold.co/400x200?text=Project+4",
   },
   {
-    title: "Project 2",
+    title: "Project 5",
     screenshot: "https://placehold.co/400x200?text=Project+5",
   },
 ];
