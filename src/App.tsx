@@ -5,6 +5,7 @@ import {
   createRoute,
   createRouter,
   redirect,
+  createHashHistory,
 } from "@tanstack/react-router";
 import "./App.css";
 import { ProjectList } from "./components/ProjectList";
@@ -15,6 +16,8 @@ import { Hero } from "./components/Hero";
 
 // Dummy data for ProjectList
 import { projectList } from "./data/projectList"; // adjust import as needed
+
+const hashHistory = createHashHistory();
 
 // Define the root route
 const rootRoute = createRootRoute({
@@ -73,6 +76,7 @@ const routeTree = rootRoute.addChildren([
 const router = createRouter({
   routeTree,
   defaultPreload: "intent",
+  history: hashHistory,
 });
 
 // function App() {
