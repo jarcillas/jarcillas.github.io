@@ -1,47 +1,92 @@
-// import { DadJoke } from "./components/DadJoke";
+import {
+  RouterProvider,
+  Outlet,
+  createRootRoute,
+  createRoute,
+  createRouter,
+  redirect,
+} from "@tanstack/react-router";
 import "./App.css";
 import { ProjectList } from "./components/ProjectList";
+import { Contact } from "./components/Contact";
+import { About } from "./components/About";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 
-const projectList = [
-  {
-    title: "ShopEasy",
-    url: "https://shopeasy-web.pages.dev/",
-    screenshot: "https://placehold.co/400x200?text=Project+1",
-  },
-  {
-    title: "Project 2",
-    screenshot: "https://placehold.co/400x200?text=Project+2",
-  },
-  {
-    title: "Project 3",
-    screenshot: "https://placehold.co/400x200?text=Project+3",
-  },
-  {
-    title: "Project 4",
-    screenshot: "https://placehold.co/400x200?text=Project+4",
-  },
-  {
-    title: "Project 5",
-    screenshot: "https://placehold.co/400x200?text=Project+5",
-  },
-];
+// Dummy data for ProjectList
+import { projectList } from "./data/projectList"; // adjust import as needed
 
-function App() {
-  return (
-    <div className="overflow-hidden bg-dark-gradient-1 h-screen flex flex-col items-center pb-2">
+// Define the root route
+const rootRoute = createRootRoute({
+  component: () => (
+    <div className="overflow-hidden bg-dark-gradient-1 h-screen flex flex-col items-center pb-2 font-mono">
       <Navbar />
 
-      <div className="sm:min-w-120 md:min-w-160 lg:min-w-240 mt-14 flex flex-col flex-grow ">
+      <div className="sm:min-w-120 md:min-w-160 lg:min-w-256 mt-14 flex flex-col flex-grow">
         <Hero />
-        {/* <div className="w-[600px] py-4">
-          <DadJoke className="gap-y-6" />
-        </div> */}
-        <ProjectList list={projectList} />
+        <section className="flex flex-col items-center w-full h-[340px] max-w-5xl mx-auto mt-8 text-secondary">
+          <Outlet />
+        </section>
       </div>
     </div>
-  );
+  ),
+});
+
+// Add an index route that redirects to /project
+const indexRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/",
+  loader: () => {
+    throw redirect({ to: "/project" });
+  },
+  component: () => null,
+});
+
+// Define child routes
+const projectRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/project",
+  component: () => <ProjectList list={projectList} />,
+});
+
+const contactRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/contact",
+  component: () => <Contact />,
+});
+
+const aboutRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/about",
+  component: () => <About />,
+});
+
+// Create the route tree
+const routeTree = rootRoute.addChildren([
+  indexRoute,
+  projectRoute,
+  contactRoute,
+  aboutRoute,
+]);
+
+// Create the router
+const router = createRouter({
+  routeTree,
+  defaultPreload: "intent",
+});
+
+// function App() {
+//   return (
+//     <>
+//       <Navbar />
+//       <Hero />
+//       <RouterProvider router={router} />
+//     </>
+//   );
+// }
+
+function App() {
+  return <RouterProvider router={router} />;
 }
 
 export default App;

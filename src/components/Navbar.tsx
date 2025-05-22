@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 const Navbar = () => (
   <h1 className="w-full flex flex-col gap-4 md:gap-2 md:flex-row fixed justify-between items-center mt-0 px-8 pt-2 pb-3 font-mono text-xl font-normal text-primary">
     <div>
@@ -7,15 +9,15 @@ const Navbar = () => (
       </a>
     </div>
     <div className="flex items-center space-x-16 text-xl">
-      <a href="/" className="hover:animate-tada">
+      <Link to="/project" className="hover:animate-tada [&.active]:underline">
         projects
-      </a>
-      <a href="/" className="hover:animate-tada">
+      </Link>
+      <Link to="/contact" className="hover:animate-tada [&.active]:underline">
         contact
-      </a>
-      <a href="/" className="hover:animate-tada">
+      </Link>
+      <Link to="/about" className="hover:animate-tada [&.active]:underline">
         about
-      </a>
+      </Link>
     </div>
   </h1>
 );

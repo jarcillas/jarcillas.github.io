@@ -3,8 +3,8 @@ import { ProjectItem } from "./ProjectItem";
 
 const ProjectList = ({ list }: { list: ProjectItemType[] }) => {
   return (
-    <div className="flex flex-col items-center w-full max-w-5xl mx-auto mt-8">
-      <h2 className="text-xl text-primary font-mono w-full">projects</h2>
+    <div className="h-full">
+      <h2 className="text-xl text-primary font-mono">projects</h2>
       <div
         className="flex flex-row gap-6 items-stretch w-full max-w-5xl mx-auto mt-8 overflow-x-auto pb-4 project-list-scrollbar font-mono"
         style={{
