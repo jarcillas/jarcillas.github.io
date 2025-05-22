@@ -12,7 +12,7 @@ const Contact = () => (
       >
         <path d="M2.94 4.94A2.5 2.5 0 0 1 5.5 4h9a2.5 2.5 0 0 1 2.56.94l-7.06 5.3-7.06-5.3zM2 6.32V15.5A2.5 2.5 0 0 0 4.5 18h11a2.5 2.5 0 0 0 2.5-2.5V6.32l-7.06 5.3a1 1 0 0 1-1.24 0L2 6.32z" />
       </svg>
-      <a href="mailto:jarcillas@gmail.com" className="hover:text-primary">
+      <a href="mailto:jesrealarcillas@gmail.com" className="hover:text-primary">
         jarcillas@gmail.com
       </a>
     </p>
