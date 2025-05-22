@@ -18,7 +18,7 @@ const ProjectItem = ({ item }: { item: ProjectItemType }) => {
         )}
         <a
           href={item?.url || "/"}
-          className="text-lg font-semibold text-white hover:text-blue-400 transition-colors duration-200"
+          className="text-lg font-semibold text-white hover:text-primary transition-colors duration-200"
           target="_blank"
           rel="noopener noreferrer"
         >
