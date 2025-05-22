@@ -1,0 +1,25 @@
+/* Add to App.css or a new CSS file and import it if not already */
+.project-list-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.2s;
+}
+.project-list-scrollbar:hover {
+  scrollbar-color: #88cfe1 transparent;
+}
+.project-list-scrollbar::-webkit-scrollbar {
+  height: 8px;
+  background: transparent;
+  transition: background 0.2s;
+}
+.project-list-scrollbar:hover::-webkit-scrollbar {
+  background: transparent;
+}
+.project-list-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.project-list-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #88cfe1;
+}
