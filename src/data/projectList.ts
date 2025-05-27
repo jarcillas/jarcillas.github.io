@@ -5,10 +5,14 @@ export const projectList: ProjectItemType[] = [
     title: "ShopEasy",
     url: "https://shopeasy-web.pages.dev/",
     screenshot: "https://placehold.co/400x200?text=Project+1",
+    description:
+      "A simple shopping list app built with React and Tailwind CSS.",
   },
   {
-    title: "Project 2",
+    title: "Challonge Clone",
     screenshot: "https://placehold.co/400x200?text=Project+2",
+    description:
+      "A clone of the Challonge tournament management system, built with Vanilla JS and CSS.",
   },
   {
     title: "Project 3",
