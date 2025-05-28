@@ -3,10 +3,10 @@ import { ProjectItem } from "./ProjectItem";
 
 const ProjectList = ({ list }: { list: ProjectItemType[] }) => {
   return (
-    <div className="h-full">
+    <div className="h-full w-full">
       <h2 className="text-xl text-primary font-mono">projects</h2>
       <div
-        className="flex flex-row gap-6 items-stretch w-full max-w-5xl mx-auto mt-8 overflow-x-auto pb-4 project-list-scrollbar font-mono"
+        className="flex flex-col lg:flex-row gap-6 items-stretch w-full max-w-5xl mx-auto mt-8 overflow-x-auto pb-4 project-list-scrollbar font-mono"
         style={{
           WebkitOverflowScrolling: "touch",
         }}

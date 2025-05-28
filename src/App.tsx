@@ -25,11 +25,13 @@ const rootRoute = createRootRoute({
     <div className="overflow-hidden bg-dark-gradient-1 h-screen flex flex-col items-center pb-2 font-mono">
       <Navbar />
 
-      <div className="sm:min-w-120 md:min-w-160 lg:min-w-256 mt-14 flex flex-col flex-grow">
-        <Hero />
-        <section className="flex flex-col items-center w-full h-[340px] max-w-5xl mx-auto mt-8 text-secondary">
-          <Outlet />
-        </section>
+      <div className="flex-grow w-full overflow-x-hidden md:mt-14 mt-28 flex flex-col items-center">
+        <div className="max-w-90 sm:max-w-160 sm:min-w-120 md:min-160 lg:min-w-256 w-full flex flex-col flex-grow">
+          <Hero />
+          <section className="flex flex-col items-center w-full h-[400px] max-w-5xl mx-auto mt-8 lg:mt-0 text-secondary">
+            <Outlet />
+          </section>
+        </div>
       </div>
     </div>
   ),
