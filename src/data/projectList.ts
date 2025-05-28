@@ -12,7 +12,7 @@ export const projectList: ProjectItemType[] = [
     title: "Challonge Clone",
     screenshot: "https://placehold.co/400x200?text=Project+2",
     description:
-      "A clone of the Challonge tournament management system, built with Vanilla JS and CSS.",
+      "A clone of the Challonge tournament management system, built with JS and CSS.",
   },
   {
     title: "Project 3",
