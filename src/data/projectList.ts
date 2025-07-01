@@ -10,6 +10,7 @@ export const projectList: ProjectItemType[] = [
   },
   {
     title: "Challonge Clone",
+    url: "https://challonge-clone.jesrealarcillas.workers.dev/",
     screenshot: "https://placehold.co/400x200?text=Project+2",
     description:
       "A clone of the Challonge tournament management system, built with JS and CSS.",
